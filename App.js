@@ -10,6 +10,29 @@ export default function App() {
   const [lastNumber, setLastNumber] = useState("")
 
   function calcular(){
+    const splitNumb = currentNumber.split(' ')
+    const firstNumb = parseFloat(splitNumb[0])
+    const lastNumb = parseFloat(splitNumb[2])
+    const operator = splitNumb[1]
+
+
+    switch(operator){
+      case '+':
+        setCurrentNumber((firstNumb + lastNumb).toString())
+        return
+      case '-':
+        setCurrentNumber((firstNumb - lastNumb).toString())
+        return
+      case '/':
+          setCurrentNumber((firstNumb / lastNumb).toString())
+          return
+      case '*':
+            setCurrentNumber((firstNumb * lastNumb).toString())
+            return
+    }
+  }
+
+  function handleInput(buttonPressed){
     
   }
 
