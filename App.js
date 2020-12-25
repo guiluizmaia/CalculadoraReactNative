@@ -1,4 +1,5 @@
 import * as React from "react";
+import {StatusBar} from 'expo-status-bar';
 import {useState} from 'react'
 import { View, Text, TouchableOpacity } from "react-native";
 import { Entypo } from '@expo/vector-icons';
@@ -33,7 +34,28 @@ export default function App() {
   }
 
   function handleInput(buttonPressed){
-    
+    console.log(buttonPressed)
+    if(buttonPressed === '+' | buttonPressed === "-" | buttonPressed === "/" | buttonPressed === "*" ){
+      setCurrentNumber(currentNumber + " " + buttonPressed + " ")
+      return
+    }
+    switch(buttonPressed){
+      case 'DEL':
+        setCurrentNumber(currentNumber.substring(0, (currentNumber.length-1)))
+        return
+      case 'AC':
+        setLastNumber("")
+        setCurrentNumber("")
+        return
+      case '=':
+        setLastNumber(currentNumber + " = ")
+        calcular()
+        return
+      case '+/-':
+        return
+      }
+
+      setCurrentNumber(currentNumber + buttonPressed)
   }
 
   return (
