@@ -58,6 +58,56 @@ export default function App() {
       setCurrentNumber(currentNumber + buttonPressed)
   }
 
+
+  const styles = StyleSheet.create({
+    results: {
+      backgroundColor: darkMode ? "#282f3b" : "#f5f5f5",
+      width: '100%',
+      minHeight: 280,
+      alignItems: 'flex-end',
+      justifyContent: 'flex-end'
+    },
+    resulTexto: {
+      color: darkMode ? "#f5f5f5" : "#282f3b",
+      margin: 10,
+      fontSize: 40
+    },
+    historiaTexto:{
+      color: darkMode ? "#85b7bb" : "#7c7c7c",
+      fontSize: 20,
+      marginRight: 10,
+      alignSelf: 'flex-end'
+    },
+    temaBotao: {
+      alignSelf: 'flex-start',
+      bottom: 120,
+      margin: 10,
+      backgroundColor: darkMode ? "#7b8084" :"#e5e5e5",
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 50,
+      height: 50,
+      borderRadius: 25,
+      
+    },
+    buttons: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+    },
+    button: {
+      borderColor: darkMode ? '#3f4d5b' : "#e5e5e5",
+      borderWidth: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      minWidth: 90, 
+      minHeight: 90,
+      flex: 2,
+    },
+    textButton: {
+      color: darkMode ? "#b5b7bb" : "#7c7c7c",
+      fontSize: 20,
+    }, 
+  })
   return (
     <View>
       <View style={styles.results}>
