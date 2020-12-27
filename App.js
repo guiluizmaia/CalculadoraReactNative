@@ -1,7 +1,7 @@
 import * as React from "react";
 import {StatusBar} from 'expo-status-bar';
 import {useState} from 'react'
-import { View, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, Button, View, Text, TouchableOpacity } from "react-native";
 import { Entypo } from '@expo/vector-icons';
 
 export default function App() {
@@ -25,11 +25,11 @@ export default function App() {
         setCurrentNumber((firstNumb - lastNumb).toString())
         return
       case '/':
-          setCurrentNumber((firstNumb / lastNumb).toString())
-          return
+        setCurrentNumber((firstNumb / lastNumb).toString())
+        return
       case '*':
-            setCurrentNumber((firstNumb * lastNumb).toString())
-            return
+        setCurrentNumber((firstNumb * lastNumb).toString())
+        return
     }
   }
 
