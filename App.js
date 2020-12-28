@@ -118,7 +118,17 @@ export default function App() {
         <Text style={styles.resulTexto}>{currentNumber}</Text>
       </View>
       <View style={styles.buttons}>
-        
+        {buttons.map((button) =>
+          button === '=' ?
+          <TouchableOpacity onPress={() => handleInput(button)} key={button} style={[styles.button, {backgroundColor: '#9dbc7b'}]}>
+            <Text style={[styles.textButton, {color: "white", fontSize: 30}]}>{button}</Text>
+          </TouchableOpacity>
+           :
+           <TouchableOpacity onPress={() => handleInput(button)} key={button} style={[styles.button, 
+           {backgroundColor: typeof(button) === 'number' ? darkMode === true ? '#303946' : '#fff': darkMode === true ? '#414853' : '#ededed'}]}>
+             <Text style={styles.textButton}>{button}</Text>
+           </TouchableOpacity>
+        )}
       </View>
     </View>
   );
