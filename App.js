@@ -2,10 +2,11 @@ import * as React from "react";
 import {StatusBar} from 'expo-status-bar';
 import {useState} from 'react'
 import { StyleSheet, Button, View, Text, TouchableOpacity } from "react-native";
-import { Entypo } from '@expo/vector-icons';
+import { Entypo, FontAwesome } from '@expo/vector-icons';
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false)
+  const [redMode, setRedMode] = useState(false)
   const buttons = ['AC', 'DEL', '%', '/', 7, 8, 9, '*', 4, 5, 6, '-', 3, 2, 1, '+', 0, '.', '+/-', '=']  
   const [currentNumber, setCurrentNumber] = useState("")
   const [lastNumber, setLastNumber] = useState("")
@@ -113,6 +114,7 @@ export default function App() {
       <View style={styles.results}>
         <TouchableOpacity style={styles.temaBotao}>
           <Entypo name={darkMode ? "light-up" : "moon"} size={24} color={darkMode ? "white" : 'black'} onPress={() => darkMode ? setDarkMode(false) : setDarkMode(true)} /> 
+          <FontAwesome name="registered" size={24} color="red" />
         </TouchableOpacity>
         <Text style={styles.historiaTexto}>{lastNumber}</Text>
         <Text style={styles.resulTexto}>{currentNumber}</Text>
