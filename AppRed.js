@@ -114,7 +114,7 @@ export default function App() {
       <View style={styles.results}>
         <TouchableOpacity style={styles.temaBotao}>
           {/*<Entypo name={darkMode ? "light-up" : "moon"} size={24} color={darkMode ? "white" : 'black'} onPress={() => darkMode ? setDarkMode(false) : setDarkMode(true)} />*/ }
-          <FontAwesome name="registered" size={24} color="red" />
+          <FontAwesome name="registered" size={24} color="red" onPress={() => darkMode ? setDarkMode(false) : setDarkMode(true)}/>
         </TouchableOpacity>
         <Text style={styles.historiaTexto}>{lastNumber}</Text>
         <Text style={styles.resulTexto}>{currentNumber}</Text>
